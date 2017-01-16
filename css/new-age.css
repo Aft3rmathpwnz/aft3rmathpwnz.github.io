@@ -133,6 +133,17 @@ p {
   color: rgba(255, 255, 255, 0.7);
 }
 
+@media (min-width: 768px){
+  .navbar-right {
+    margin-right: 0px;
+  }
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    max-height: 340px;
+}
+
+
 span.medium {
   font-weight: 500;
 }
@@ -244,7 +255,7 @@ span.medium {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar-collapse {
     background-color: rgba(0, 0, 0, 0.6);
     height: 200px;
@@ -369,22 +380,26 @@ header .logo-container {
 .desktop-blocks {
   display: none;
 }
+.mobile-vertical {
+  /*display: none;*/
+}
 
 @media (min-width: 768px) {
   .desktop-blocks {
     display: block;
   }
+  .mobile-vertical {
+    display: none;
+  }
 }
 
-.mobile-vertical {
-  display: none;
-}
-
+/*
 @media (max-width: 768px) {
   .mobile-vertical {
     display: block;
   }
 }
+*/
 
 section {
   padding-top: 60px;
@@ -680,9 +695,9 @@ img.gmi-logo {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar-header {
-    width: 100%; 
+    width: 100%;
   }
 }
 
@@ -870,7 +885,7 @@ div.features {
 .feature-image {
   min-width: 240px;
   margin: auto;
-      z-index: 0;
+  z-index: 0;
 }
 
 img.feature {
@@ -948,7 +963,7 @@ div.qr {
     /*margin-left: 60px;*/
     text-align: left;
   }
-   .feature-description-block.left {
+  .feature-description-block.left {
     margin-left: 60px;
   }
   .feature-description-block > h4 {
@@ -975,7 +990,7 @@ div.qr {
   .feature-description-block > p .compact, ul .compact {
     font-size: 18px;
   }
-     .feature-description-block.left {
+  .feature-description-block.left {
     margin-left: 90px;
   }
 }
