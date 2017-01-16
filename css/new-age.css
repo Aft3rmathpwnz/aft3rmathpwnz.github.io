@@ -111,7 +111,7 @@ p {
   */
 
   font-family: 'SF UI Display', 'Helvetica', 'Arial', 'sans-serif';
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
   color: #F6F9FF;
   letter-spacing: 0;
@@ -299,8 +299,13 @@ header .header-content {
   position: relative;
 }
 
+
+
 .header-content-inner > p {
   margin-bottom: 20px;
+  max-width: 390px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 600px) {
@@ -359,6 +364,9 @@ header .logo-container {
   header .header-content .header-content-inner h1 {
     font-size: 50px;
   }
+    .header-content-inner > p {
+  font-size: 20px;
+}
   header .device-container {
     max-width: none;
     max-height: calc(0vh);
