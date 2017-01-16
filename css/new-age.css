@@ -868,6 +868,7 @@ div.features {
 .feature-image {
   min-width: 240px;
   margin: auto;
+      z-index: 0;
 }
 
 img.feature {
@@ -905,8 +906,9 @@ div.qr {
     margin-left: auto;
     margin-right: 0px;
   }
-  img.qr {
-    margin-left: -20px;
+  img.feature.right {
+    /*margin-left: -20px;*/
+    margin-right: 0px;
   } 
 }
 
@@ -941,8 +943,11 @@ div.qr {
 
 @media (min-width: 768px) {
   .feature-description-block {
-    margin-left: 60px;
+    /*margin-left: 60px;*/
     text-align: left;
+  }
+   .feature-description-block.left {
+    margin-left: 60px;
   }
   .feature-description-block > h4 {
     font-size: 48px;
@@ -967,6 +972,9 @@ div.qr {
 @media (min-width: 992px) {
   .feature-description-block > p .compact, ul .compact {
     font-size: 18px;
+  }
+     .feature-description-block.left {
+    margin-left: 90px;
   }
 }
 
