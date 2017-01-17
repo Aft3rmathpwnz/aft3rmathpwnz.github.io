@@ -62,11 +62,15 @@ a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #3498DB;
+  color: #0076FF;
 }
 a:hover,
 a:focus {
-  color: #fcbd20;
+  color: #3498DB;
+}
+
+.instruction > a {
+  margin-top: 100px;
 }
 hr {
   max-width: 100px;
@@ -608,12 +612,12 @@ footer ul li a.active {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #222222;
+  background: #2ECC71;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #222222;
+  background: #2ECC71;
 }
 img::selection {
   color: white;
@@ -803,6 +807,11 @@ div.first {
   color: #212121;
   display: inline;
   font-size: 18px;
+  vertical-align: top;
+}
+
+.instruction > h4 > a {
+  display: inline;
   vertical-align: top;
 }
 
@@ -1057,3 +1066,17 @@ p.author {
     font-size: 14px;
   }
 }
+
+span.cyan {
+  color:  #3498DB;
+}
+
+.email > a {
+  color: #F6F9FF;
+}
+
+.email > a:hover,
+.email > a:focus {
+  color: #3498DB;
+}
+
