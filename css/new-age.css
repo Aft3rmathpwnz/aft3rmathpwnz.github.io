@@ -144,7 +144,7 @@ p {
 }
 
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-    max-height: 340px;
+  max-height: 340px;
 }
 
 
@@ -368,9 +368,9 @@ header .logo-container {
   header .header-content .header-content-inner h1 {
     font-size: 50px;
   }
-    .header-content-inner > p {
-  font-size: 20px;
-}
+  .header-content-inner > p {
+    font-size: 20px;
+  }
   header .device-container {
     max-width: none;
     max-height: calc(0vh);
@@ -607,7 +607,13 @@ footer ul li a.active {
 }
 .btn-xl {
   padding: 15px 25px;
-  font-size: 24px;
+  font-size: 20px;
+}
+@media (min-width: 400px)) {
+  .btn-xl {
+    padding: 15px 25px;
+    font-size: 24px;
+  }
 }
 ::-moz-selection {
   color: white;
