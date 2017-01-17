@@ -1086,3 +1086,19 @@ span.cyan {
   color: #3498DB;
 }
 
+.menu-left-padding {
+  padding-left: 30px;
+}
+
+.menu-right-padding {
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .menu-left-padding {
+    padding-left: 60px;
+  }
+    .menu-right-padding {
+    padding-right: 30px;
+  }
+}
