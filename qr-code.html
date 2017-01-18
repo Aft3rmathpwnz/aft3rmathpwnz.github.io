@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>GuideMeIn Position</title>
+</head>
+<body>
+
+	<script>
+
+		var appUrl = 'yourAppScheme://';
+
+    // fallback сработает если не откроется установленное приложение
+    function openStore(time) {
+    	console.log('Opening Site');
+    	window.location.href = 'http://guidemein.ru';
+    };
+
+    // Задержка для того чтобы приложение успело открыться
+    var openTimeout = setTimeout(openStore(), 300);
+
+    var iframe = document.createElement('iframe');
+    iframe.onload = function() {
+    	clearTimeout(openTimeout);
+    	iframe.parentNode.removeChild(iframe);
+    	window.location.href = appUrl;
+    };
+
+    iframe.src = appUrl;
+    iframe.style.display = 'none';
+    console.log('Opening App');
+    document.body.appendChild(iframe);
+</script>
+
+</body>
+</html>
