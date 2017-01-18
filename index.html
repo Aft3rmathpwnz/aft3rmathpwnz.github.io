@@ -46,31 +46,7 @@
     </head>
 
     <body id="page-top">
-      <script>
 
-            var appUrl = 'yourAppScheme://';
-
-    // fallback сработает если не откроется установленное приложение
-    function openStore(time) {
-         console.log('Opening Site');
-        window.location.href = 'http://guidemein.ru';
-    };
-
-    // Задержка для того чтобы приложение успело открыться
-    var openTimeout = setTimeout(openStore(), 300);
-
-    var iframe = document.createElement('iframe');
-    iframe.onload = function() {
-        clearTimeout(openTimeout);
-        iframe.parentNode.removeChild(iframe);
-        window.location.href = appUrl;
-    };
-
-    iframe.src = appUrl;
-    iframe.style.display = 'none';
-    console.log('Opening App');
-    document.body.appendChild(iframe);
-</script>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container" style="width: 100%;">
         <!-- Brand and toggle get grouped for better mobile display -->
