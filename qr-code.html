@@ -12,6 +12,9 @@
 
 	<script>
 
+	var parameters = location.search.substring(1).split("&");
+	console.log(parameters);
+
 	var appUrl = 'guideMeInScheme://';
 
     // fallback сработает если не откроется установленное приложение
@@ -21,7 +24,7 @@
     };
 
     // Задержка для того чтобы приложение успело открыться
-    var openTimeout = setTimeout(openStore(), 300);
+    //var openTimeout = setTimeout(openStore(), 300);
 
     var iframe = document.createElement('iframe');
     iframe.onload = function() {
