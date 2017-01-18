@@ -46,53 +46,120 @@
     </head>
 
     <body id="page-top">
-        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-            <div class="container" style="width: 100%;">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span><i class="fa fa-bars menu-right-padding" style="text-align: right;"></i>
-                    </button>
-                    <a class="navbar-brand page-scroll menu-left-padding" href="#page-top"><img class="gmi-logo" src="img/gmi_logo_128.svg" /></a>
-                    <a class="navbar-brand page-scroll" href="#page-top"><span class="gmi-blue">Guide</span><span class="gmi-green">Me</span><span class="medium">In</span></a>
-                </div>
+      <script>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right menu-right-padding">
-                        <li>
-                            <a class="page-scroll" href="#download">УСТАНОВКА</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#features">ФУНКЦИИ</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">КОНТАКТЫ</a>
-                        </li>
-                    </ul>
+            var appUrl = 'yourAppScheme://';
+
+    // fallback сработает если не откроется установленное приложение
+    function openStore(time) {
+         console.log('Opening Site');
+        window.location.href = 'http://guidemein.ru';
+    };
+
+    // Задержка для того чтобы приложение успело открыться
+    var openTimeout = setTimeout(openStore(), 300);
+
+    var iframe = document.createElement('iframe');
+    iframe.onload = function() {
+        clearTimeout(openTimeout);
+        iframe.parentNode.removeChild(iframe);
+        window.location.href = appUrl;
+    };
+
+    iframe.src = appUrl;
+    iframe.style.display = 'none';
+    console.log('Opening App');
+    document.body.appendChild(iframe);
+</script>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container" style="width: 100%;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars menu-right-padding" style="text-align: right;"></i>
+            </button>
+            <a class="navbar-brand page-scroll menu-left-padding" href="#page-top"><img class="gmi-logo" src="img/gmi_logo_128.svg" /></a>
+            <a class="navbar-brand page-scroll" href="#page-top"><span class="gmi-blue">Guide</span><span class="gmi-green">Me</span><span class="medium">In</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right menu-right-padding">
+                <li>
+                    <a class="page-scroll" href="#download">УСТАНОВКА</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#features">ФУНКЦИИ</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">КОНТАКТЫ</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+<header>
+
+    <div class="container">
+
+        <div class="row">
+           <div class="visible-lg-block col-sm-12">
+            <div class="logo-container">
+               <img style="; margin: 0px 0px 0px 0px; width: 186px; height: 186px" src="img/gmi_logo_text@2x.png" alt="">
+           </div>
+       </div>
+   </div>
+
+   <div class="row desktop-blocks">
+
+     <div class="col-sm-5 col-xs-12">
+        <div class="device-container">
+            <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                    <div class="screen">
+                        <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                        <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
+                    </div>
+                    <div class="button">
+                        <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                    </div>
                 </div>
-                <!-- /.navbar-collapse -->
             </div>
-            <!-- /.container-fluid -->
-        </nav>
+        </div>
+    </div>
 
+    <div class="col-sm-5 col-sm-offset-2 col-xs-12">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>GUIDE ME IN
+                    <br>БЕТА-ТЕСТ</h1>
+                    <p>Приглашаем Вас принять участие в бета-тестировании iOS приложения  для навигации по зданию НИУ «БелГУ»</p>
+                    <a href="#download" class="btn btn-outline btn-xl page-scroll">ПРИНЯТЬ УЧАСТИЕ</a>
+                </div>
+            </div>
+        </div>
 
-        <header>
+    </div>
 
-            <div class="container">
+    <div class="row mobile-vertical">
 
-                <div class="row">
-                 <div class="visible-lg-block col-sm-12">
-                    <div class="logo-container">
-                     <img style="; margin: 0px 0px 0px 0px; width: 186px; height: 186px" src="img/gmi_logo_text@2x.png" alt="">
-                 </div>
-             </div>
-         </div>
+     <div class="col-xs-12">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>GUIDE ME IN
+                    <br>БЕТА-ТЕСТ</h1>
+                    <p>Приглашаем Вас принять участие в бета-тестировании iOS приложения для навигации по зданию НИУ «БелГУ»</p>
+                    <a href="#download" class="btn btn-outline btn-xl page-scroll">ПРИНЯТЬ УЧАСТИЕ</a>
+                </div>
+            </div>
+        </div>
 
-         <div class="row desktop-blocks">
-
-           <div class="col-sm-5 col-xs-12">
-            <div class="device-container">
+        <div class="col-xs-12">
+            <div class="device-container" style="z-index: 0">
                 <div class="device-mockup iphone6_plus portrait white">
                     <div class="device">
                         <div class="screen">
@@ -107,111 +174,69 @@
             </div>
         </div>
 
-        <div class="col-sm-5 col-sm-offset-2 col-xs-12">
-            <div class="header-content">
-                <div class="header-content-inner">
-                    <h1>GUIDE ME IN
-                        <br>БЕТА-ТЕСТ</h1>
-                        <p>Приглашаем Вас принять участие в бета-тестировании iOS приложения  для навигации по зданию НИУ «БелГУ»</p>
-                        <a href="#download" class="btn btn-outline btn-xl page-scroll">ПРИНЯТЬ УЧАСТИЕ</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mobile-vertical">
-
-           <div class="col-xs-12">
-            <div class="header-content">
-                <div class="header-content-inner">
-                    <h1>GUIDE ME IN
-                        <br>БЕТА-ТЕСТ</h1>
-                        <p>Приглашаем Вас принять участие в бета-тестировании iOS приложения для навигации по зданию НИУ «БелГУ»</p>
-                        <a href="#download" class="btn btn-outline btn-xl page-scroll">ПРИНЯТЬ УЧАСТИЕ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12">
-                <div class="device-container" style="z-index: 0">
-                    <div class="device-mockup iphone6_plus portrait white">
-                        <div class="device">
-                            <div class="screen">
-                                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
-                            </div>
-                            <div class="button">
-                                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- header container-->
     </div>
+
+    <!-- header container-->
+</div>
 </header>
 
 <div style="margin: 0 auto; height: 60px; width: 100%; position: absolute; background-color: #F6F9FF; z-index: 10;"><img style="width: 60px; height: 60px;  display:block;
     margin:-30px auto;" src="img/scroll_pin@2x.png" alt=""></div>
 
 
-<section id="download" class="download bg-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <div class="instruction first">
-                    <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/beta_link_icon@2x.png" alt="">
-                    <h4>Перейдите по <a href="https://betas.to/JLv4bpvT">ссылке</a></h4>
-                    <p>Для того, чтобы принять участие в бета-тестировании, Вам необходимо перейти по данной ссылке.</p>
+    <section id="download" class="download bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="instruction first">
+                        <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/beta_link_icon@2x.png" alt="">
+                        <h4>Перейдите по <a href="https://betas.to/JLv4bpvT">ссылке</a></h4>
+                        <p>Для того, чтобы принять участие в бета-тестировании, Вам необходимо перейти по данной ссылке.</p>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                   <div class="instruction">
+                    <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/email_icon@2x.png" alt="">
+                    <h4>Введите e-mail</h4>
+                    <p>На открывшейся странице введите адрес e-mail, привязанный к Вашему iOS устройству.</p>
                 </div>
                 <div class="divider"></div>
             </div>
             <div class="col-md-4 col-sm-12">
-             <div class="instruction">
-                <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/email_icon@2x.png" alt="">
-                <h4>Введите e-mail</h4>
-                <p>На открывшейся странице введите адрес e-mail, привязанный к Вашему iOS устройству.</p>
+               <div class="instruction">
+                <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/accept_icon@2x.png" alt="">
+                <h4>Подтвердите</h4>
+                <p>Дождитесь получения ответного письма. Откройте его на своем устройстве и нажмите на кнопку <span class="cyan">«Let Me In»</span>.</p>
             </div>
             <div class="divider"></div>
         </div>
-        <div class="col-md-4 col-sm-12">
-         <div class="instruction">
-            <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/accept_icon@2x.png" alt="">
-            <h4>Подтвердите</h4>
-            <p>Дождитесь получения ответного письма. Откройте его на своем устройстве и нажмите на кнопку <span class="cyan">«Let Me In»</span>.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4 second-row">
+            <div class="instruction">
+                <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/name_icon@2x.png" alt="">
+                <h4>Введите Ваше имя</h4>
+                <p>На следующем экране укажите Ваше имя и нажмите кнопку <span class="cyan">«Next»</span>.</p>
+            </div>
+            <div class="divider"></div>
+        </div>
+        <div class="col-md-4 second-row">
+           <div class="instruction">
+               <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/notification_icon@2x.png" alt="">
+               <h4>Дождитесь письма</h4>
+               <p>На Вашу почту придет письмо с предложением установить версию приложения, доступную для запуска на Вашем устройстве.</p>
+           </div>
+           <div class="divider"></div>
+       </div>
+       <div class="col-md-4 second-row">
+           <div class="instruction">
+            <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/install_icon@2x.png" alt="">
+            <h4>Установите приложение</h4>
+            <p>В полученном письме нажмите кнопку <span class="cyan">«Install»</span> и подтвердите желание установки приложения, нажав кнопку <span class="cyan">«Accept»</span>.</p>
         </div>
         <div class="divider"></div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-4 second-row">
-        <div class="instruction">
-            <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/name_icon@2x.png" alt="">
-            <h4>Введите Ваше имя</h4>
-            <p>На следующем экране укажите Ваше имя и нажмите кнопку <span class="cyan">«Next»</span>.</p>
-        </div>
-        <div class="divider"></div>
-    </div>
-    <div class="col-md-4 second-row">
-     <div class="instruction">
-         <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/notification_icon@2x.png" alt="">
-         <h4>Дождитесь письма</h4>
-         <p>На Вашу почту придет письмо с предложением установить версию приложения, доступную для запуска на Вашем устройстве.</p>
-     </div>
-     <div class="divider"></div>
- </div>
- <div class="col-md-4 second-row">
-     <div class="instruction">
-        <img style="; margin: 0px 0px 0px 0px; width: 60px; height: 60px" src="img/install_icon@2x.png" alt="">
-        <h4>Установите приложение</h4>
-        <p>В полученном письме нажмите кнопку <span class="cyan">«Install»</span> и подтвердите желание установки приложения, нажав кнопку <span class="cyan">«Accept»</span>.</p>
-    </div>
-    <div class="divider"></div>
-</div>
 </div>
 <div class="divider"></div>
 </div>
@@ -254,7 +279,7 @@
             </div>
 
             <div class="col-sm-12 col-xs-12 feature-container mobile-vertical">
-             <div class="col-sm-6 col-xs-12 feature-image qr">
+               <div class="col-sm-6 col-xs-12 feature-image qr">
                 <img class="feature qr"  src="img/pos_determine_image@2x.png" alt="">
             </div>
             <div class="col-sm-6 col-xs-12 feature-description-block vertical-center">
@@ -309,7 +334,7 @@
             </div>
 
             <div class="col-sm-12 col-xs-12 feature-container mobile-vertical">
-             <div class="col-sm-6 col-xs-12 feature-image">
+               <div class="col-sm-6 col-xs-12 feature-image">
                 <img class="feature"  src="img/auds_searching_image@2x.png" alt="">
             </div>
             <div class="col-sm-6 col-xs-12 feature-description-block vertical-center">
