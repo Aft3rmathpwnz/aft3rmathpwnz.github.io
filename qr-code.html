@@ -33,17 +33,11 @@
   var md = new MobileDetect(window.navigator.userAgent);
 
   if(md.is('iOS')){
-  	var os = `${md.os()} версии ${md.version('iOS')} на ${md.phone()}`;
-  	console.log(`${os}`);
+  	var os = md.os() + " версии " + md.version('iOS') + " на " +  md.phone();
+  	console.log(os);
 
 
-
-  	
-
-
-  	span.appendChild( document.createTextNode(`${os}`) );
-
-
+  	span.appendChild( document.createTextNode(os) );
 
 
   	var parameters = location.search.substring(1).split("&");
@@ -51,8 +45,8 @@
   	v_key = unescape(temp[0]);
   	v_id = unescape(temp[1]);
 
-  	var appUrl = `guidemein://position?${v_key}=${v_id}`;
-  	span.appendChild( document.createTextNode(` app scheme ${appUrl}`) );
+  	var appUrl = 'guidemein://position?${v_key}=${v_id}';
+  	span.appendChild( document.createTextNode(" app scheme " + appUrl) );
 
   	console.log(appUrl);
   // Задержка для того чтобы приложение успело открыться
@@ -63,7 +57,7 @@
   	clearTimeout(openTimeout);
   	iframe.parentNode.removeChild(iframe);
   	window.location.href = appUrl;
-  	span.appendChild( document.createTextNode(` iFrame loaded`) );
+  	span.appendChild( document.createTextNode(" iFrame loaded") );
   };
 
   iframe.src = appUrl;
@@ -73,11 +67,11 @@
 }
 else {
 	console.log('Not iOS, open site');
-	span.appendChild( document.createTextNode(` Not iOS, open site`) );
+	span.appendChild( document.createTextNode(" Not iOS, open site") );
 	//openStore();
 }
 
-span.appendChild( document.createTextNode(` JS works!`) );
+span.appendChild( document.createTextNode(" JS works!") );
 
 </script>
 
