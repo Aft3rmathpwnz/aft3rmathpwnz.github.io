@@ -10,8 +10,9 @@
 </head>
 <body>
 	<span id="spanId">Text span.</span>
+	<script src="https://cdn.jsdelivr.net/mobile-detect.js/1.3.5/mobile-detect.js"></script>
 	<script>
-	  	window.location.href = 'http://guidemein.ru';
+		window.location.href = 'http://guidemein.ru';
 
 
 		var span = document.getElementById('spanId');
@@ -19,6 +20,15 @@
 			span.removeChild( span.firstChild );
 		}
 		span.appendChild( document.createTextNode(" JS works!") );
+
+		var md = new MobileDetect(window.navigator.userAgent);
+
+		if(md.is('iOS')){
+			var os = `${md.os()} версии ${md.version('iOS')} на ${md.phone()}`;
+			console.log(`${os}`);
+			span.appendChild( document.createTextNode(`${os}`) );
+		}
+
 	</script>
 
 </body>
