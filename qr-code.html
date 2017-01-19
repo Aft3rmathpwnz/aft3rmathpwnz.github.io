@@ -20,6 +20,7 @@
   // fallback сработает если не откроется установленное приложение
   function openStore(time) {
   	console.log('Opening Site');
+  	alert(Opening Site!);
   	window.location.href = 'http://guidemein.ru';
   };
 
@@ -74,6 +75,8 @@ else {
 	span.appendChild( document.createTextNode(` Not iOS, open site`) );
 	openStore();
 }
+
+	span.appendChild( document.createTextNode(` JS works!`) );
 
 </script>
 
