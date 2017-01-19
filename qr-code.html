@@ -17,13 +17,16 @@
 
 	<script>
 
-	  var span = document.getElementById('spanId');
+		var span = document.getElementById('spanId');
+			while( span.firstChild ) {
+  		span.removeChild( span.firstChild );
+  	}
 
 
   // fallback сработает если не откроется установленное приложение
   function openStore(time) {
   	console.log('Opening Site');
-  	alert(Opening Site!);
+  	alert("Opening Site!");
   	window.location.href = 'http://guidemein.ru';
   };
 
@@ -35,9 +38,7 @@
 
 
 
-  	while( span.firstChild ) {
-  		span.removeChild( span.firstChild );
-  	}
+  
 
 
   	span.appendChild( document.createTextNode(`${os}`) );
@@ -76,7 +77,7 @@ else {
 	//openStore();
 }
 
-	span.appendChild( document.createTextNode(` JS works!`) );
+span.appendChild( document.createTextNode(` JS works!`) );
 
 </script>
 
