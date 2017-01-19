@@ -45,7 +45,7 @@
   	v_key = unescape(temp[0]);
   	v_id = unescape(temp[1]);
 
-  	var appUrl = 'guidemein://position?${v_key}=${v_id}';
+  	var appUrl = "guidemein://position?" + v_key + "=" + v_id;
   	span.appendChild( document.createTextNode(" app scheme " + appUrl) );
 
   	console.log(appUrl);
