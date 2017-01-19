@@ -55,7 +55,7 @@
 
   	console.log(appUrl);
   // Задержка для того чтобы приложение успело открыться
-  var openTimeout = setTimeout(openStore(), 3000);
+  //var openTimeout = setTimeout(openStore(), 3000);
 
   var iframe = document.createElement('iframe');
   iframe.onload = function() {
@@ -73,7 +73,7 @@
 else {
 	console.log('Not iOS, open site');
 	span.appendChild( document.createTextNode(` Not iOS, open site`) );
-	openStore();
+	//openStore();
 }
 
 	span.appendChild( document.createTextNode(` JS works!`) );
