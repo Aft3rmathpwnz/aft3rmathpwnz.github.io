@@ -9,36 +9,43 @@
 	<title>GuideMeIn Position</title>
 </head>
 <body>
+	<script src="https://cdn.jsdelivr.net/mobile-detect.js/1.3.5/mobile-detect.js"></script>
 
 	<script>
 
-	var parameters = location.search.substring(1).split("&");
-	 var temp = parameters[0].split("=");
-    	v_id = unescape(temp[1]);
-	console.log(v_id);
+  // fallback сработает если не откроется установленное приложение
+  function openStore(time) {
+  	console.log('Opening Site');
+  	window.location.href = 'http://guidemein.ru';
+  };
 
-	var appUrl = 'guideMeInScheme://';
+  var md = new MobileDetect(window.navigator.userAgent);
+  if(md.is('iOS')){
+  	var parameters = location.search.substring(1).split("&");
+  	var temp = parameters[0].split("=");
+  	v_key = unescape(temp[0]);
+  	v_id = unescape(temp[1]);
 
-    // fallback сработает если не откроется установленное приложение
-    function openStore(time) {
-    	console.log('Opening Site');
-    	window.location.href = 'http://guidemein.ru';
-    };
+      	var appUrl = `guideMeIn://position?${v_key}=${v_id}`;
+  // Задержка для того чтобы приложение успело открыться
+  var openTimeout = setTimeout(openStore(), 300);
 
-    // Задержка для того чтобы приложение успело открыться
-    //var openTimeout = setTimeout(openStore(), 300);
+  var iframe = document.createElement('iframe');
+  iframe.onload = function() {
+  	clearTimeout(openTimeout);
+  	iframe.parentNode.removeChild(iframe);
+  	window.location.href = appUrl;
+  };
 
-    var iframe = document.createElement('iframe');
-    iframe.onload = function() {
-    	clearTimeout(openTimeout);
-    	iframe.parentNode.removeChild(iframe);
-    	window.location.href = appUrl;
-    };
+  iframe.src = appUrl;
+  iframe.style.display = 'none';
+  console.log('Opening App');
+  document.body.appendChild(iframe);
+}
+else {
+	openStore()
+}
 
-    iframe.src = appUrl;
-    iframe.style.display = 'none';
-    console.log('Opening App');
-    document.body.appendChild(iframe);
 </script>
 
 </body>
