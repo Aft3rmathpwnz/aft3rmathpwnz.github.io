@@ -17,6 +17,9 @@
 
 	<script>
 
+	  var span = document.getElementById('spanId');
+
+
   // fallback сработает если не откроется установленное приложение
   function openStore(time) {
   	console.log('Opening Site');
@@ -25,15 +28,12 @@
   };
 
   var md = new MobileDetect(window.navigator.userAgent);
-  var span = document.getElementById('spanId');
 
   if(md.is('iOS')){
   	var os = `${md.os()} версии ${md.version('iOS')} на ${md.phone()}`;
   	console.log(`${os}`);
 
 
-
-  	var span = document.getElementById('spanId');
 
   	while( span.firstChild ) {
   		span.removeChild( span.firstChild );
