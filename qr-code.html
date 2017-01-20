@@ -48,6 +48,26 @@
   	span.appendChild( document.createTextNode(" app scheme " + appUrl) );
 
   	console.log(appUrl);
+
+  	if(md.version('iOS') >= 9.0) {
+  		setTimeout(function() {
+  			window.location = "http://itunes.com/apps/yourappname";
+  		}, 25);
+
+// If "custom-uri://" is registered the app will launch immediately and your
+// timer won't fire. If it's not set, you'll get an ugly "Cannot Open Page"
+// dialogue prior to the App Store application launching
+}
+else {
+	window.location = appUrl; // will result in error message if app not installed
+
+	setTimeout(function() {
+   // Link to the App Store should go here -- only fires if deep link fails                
+   window.location = "http://guidemein.ru";
+}, 500);
+
+ 	window.location = appUrl; // will result in error message if app not installed
+
   // Задержка для того чтобы приложение успело открыться
   var openTimeout = setTimeout(openStore(500), 3000);
 
@@ -63,6 +83,8 @@
   iframe.style.display = 'none';
   console.log('Opening App');
   document.body.appendChild(iframe);
+
+}
 }
 else {
 	console.log('Not iOS, open site');
