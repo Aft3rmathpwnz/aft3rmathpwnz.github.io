@@ -50,6 +50,7 @@
   	console.log(appUrl);
 
   	if(md.version('iOS') >= 9.0) {
+  	span.appendChild( document.createTextNode(" iOS >= 9.0!") );
   		setTimeout(function() {
   			window.location = "http://itunes.com/apps/yourappname";
   		}, 25);
