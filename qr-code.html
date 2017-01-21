@@ -7,21 +7,22 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>GuideMeIn QR</title>
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="css/qr.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #3498DB">
 
-	<span id="spanId">Text span.</span>
+	<h4 id="title">Guide Me In Positioning</h4>
 
 
 	<script src="https://cdn.jsdelivr.net/mobile-detect.js/1.3.5/mobile-detect.js"></script>
 
 	<script>
 
-		var span = document.getElementById('spanId');
-		while( span.firstChild ) {
-			span.removeChild( span.firstChild );
-		}
-
+		var span = document.getElementById('title');
+    while( span.firstChild ) {
+      span.removeChild( span.firstChild );
+    }
 
   // fallback сработает если не откроется установленное приложение
   function openStore(time) {
@@ -32,12 +33,8 @@
   var md = new MobileDetect(window.navigator.userAgent);
 
   if(md.is('iOS')){
+    // if device is running iOS
   	var os = md.os() + " версии " + md.version('iOS') + " на " +  md.phone();
-  	console.log(os);
-
-
-  	span.appendChild( document.createTextNode(os) );
-
 
   	var parameters = location.search.substring(1).split("&");
   	var temp = parameters[0].split("=");
@@ -45,28 +42,25 @@
   	v_id = unescape(temp[1]);
 
   	var appUrl = "guidemein://position?" + v_key + "=" + v_id;
-  	span.appendChild( document.createTextNode(" app scheme " + appUrl) );
-
-  	console.log(appUrl);
 
   	if(md.version('iOS') >= 9.0) {
-
+      //if iOS version is greater than or equal to 9.0
   	window.location = appUrl; // will result in error message if app not installed
-  	span.appendChild( document.createTextNode(" iOS >= 9.0!") );
+  	span.appendChild( document.createTextNode("Если у Вас установлено приложение GuideMeIn - подвердите его открытие. Иначе дождитесь переадресации на сайт спустя 5 секунд.") );
   	setTimeout(function() {
   		window.location = "http://guidemein.ru";
   	}, 5000);
-
-// If "custom-uri://" is registered the app will launch immediately and your
-// timer won't fire. If it's not set, you'll get an ugly "Cannot Open Page"
-// dialogue prior to the App Store application launching
 }
 else {
+  // If iOS version is less than 9.0
+
+  span.appendChild( document.createTextNode("Если у Вас установлено приложение GuideMeIn - оно будет открыто. Иначе дождитесь переадресации на сайт.") );
+
 
 	setTimeout(function() {
    // Link to the App Store should go here -- only fires if deep link fails                
    window.location = "http://guidemein.ru";
-}, 500);
+ }, 500);
 
  	window.location = appUrl; // will result in error message if app not installed
 
@@ -83,18 +77,14 @@ else {
 
   iframe.src = appUrl;
   iframe.style.display = 'none';
-  console.log('Opening App');
   document.body.appendChild(iframe);
-
 }
 }
 else {
-	console.log('Not iOS, open site');
-	span.appendChild( document.createTextNode(" Not iOS, open site") );
+  // If device is running not iOS
+	span.appendChild( document.createTextNode("Ваше устройство работает не на iOS, сейчас Вы будете перенаправлены на сайт приложения.") );
 	openStore();
 }
-
-span.appendChild( document.createTextNode(" JS works!") );
 
 </script>
 
